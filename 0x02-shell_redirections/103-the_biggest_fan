@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -rnk 1 | head -n 1 | rev | cut -d ' ' -f | rev 
+awk -F' ' '{print $1}' access.log | sort | uniq -c | sort -nr | head -n 11
